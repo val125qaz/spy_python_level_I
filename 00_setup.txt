@@ -1,0 +1,47 @@
+#python 2.7 
+#only working in http not on https
+#issue having in sslstrip
+#working not sending packet mean they cannot use internet
+#working changing file but only in http not in https 
+#can monitor their password but again http only
+#can change your download file
+## lack of resources need more money the project has been halt 
+
+----------------------Change Mac address-----------------------
+apt-get update
+apt-get install terminator
+setup nat
+https://www.techrepublic.com/article/how-to-create-multiple-nat-networks-in-virtualbox/
+
+----------------------Change Mac address Input -----------------------
+python mac_changer.py -i eth0 -m 00:11:22:33:55:61
+
+----------------------network scanner -----------------------
+
+pip install scapy-python3
+----------------------network scanner Input -----------------------
+
+python network_scanner.py --target 10.0.2.1/24
+
+
+----------------------ARP Spoofing -----------------------
+
+apt-get install dsniff # if not working only
+echo 1 > /proc/sys/net/ipv4//ip_forward
+
+----------------------ARP Spoofing  Input -----------------------
+python arp_spoof.py
+
+----------------------Packet Sniffer-----------------------
+Working ARP Spoofing
+iptables --flush
+----------------------Packet Sniffer input -----------------------
+python packet_sniffer.py
+
+----------------------Code Injection-----------------------
+echo 1 > /proc/sys/net/ipv4//ip_forward
+iptables -I FORWARD -j NFQUEUE --queue-num 0
+
+Working ARP Spoofing
+----------------------Code Injection Input -----------------------
+python packet_sniffer.py
